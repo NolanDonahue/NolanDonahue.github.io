@@ -29,21 +29,31 @@ h6 {
 
 .dashed {
   border-top: 3px dashed #bbb;
+  margin-bottom: 1%;
 }
 .first {
   color: blanchedalmond;
 }
 
-p {
+h3 {
   background-color: rgba(250, 235, 215, 0.459);
   border: black;
   border-style: inset;
   border-width: 3px;
 }
-
-indent {
-  text-indent: 10%;
+p {
 }
+.tab {
+  text-indent: 40px;
+  margin-left: 1.3%;
+}
+.end {
+  text-indent: 40px;
+  margin-left: 1.3%;
+  font-size: 20px;
+  font-style: italic;
+}
+
 #your-name {
   background-color: azure;
   border: 5px solid rgb(29, 84, 155);
