@@ -25,6 +25,15 @@ h6 {
   border: black;
   border-style: solid;
   padding-left: 10px;
+  /* float: left; */
+}
+
+.floatLeft {
+  float: left;
+}
+
+.floatRight {
+  float: right;
 }
 
 .dashed {
@@ -58,8 +67,7 @@ p {
   background-color: azure;
   border: 5px solid rgb(29, 84, 155);
 }
-
-a.button {
+.button {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
@@ -71,4 +79,8 @@ a.button {
   border-style: ridge;
   padding-left: 3px;
   padding-right: 3px;
+  font-size: 30px;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
 }
