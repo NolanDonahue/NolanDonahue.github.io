@@ -24,6 +24,7 @@ h6 {
   font-size: 20px;
   border: black;
   border-style: solid;
+  padding-left: 10px;
 }
 
 .dashed {
@@ -34,6 +35,13 @@ h6 {
 }
 
 p {
+  background-color: rgba(250, 235, 215, 0.459);
+  border: black;
+  border-style: inset;
+  border-width: 3px;
+}
+
+indent {
   text-indent: 10%;
 }
 #your-name {
