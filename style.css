@@ -1,0 +1,17 @@
+body {
+  background-color: rgb(255, 215, 163);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.first {
+  color: blanchedalmond;
+}
+
+#your-name {
+  background-color: azure;
+  border: 5px solid rgb(29, 84, 155);
+}
