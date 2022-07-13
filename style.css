@@ -1,17 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: rgb(255, 215, 163);
   font-family: Arial, Helvetica, sans-serif;
+  /* font-size: ; */
+  /* padding: 25px; */
 }
 
 h1 {
   font-weight: bold;
+  padding: 25px;
 }
 
+h6 {
+  font-size: 40px;
+}
+.banner {
+  background-color: burlywood;
+  font-size: 20px;
+  border: black;
+  border-style: solid;
+}
+
+.dashed {
+  border-top: 3px dashed #bbb;
+}
 .first {
   color: blanchedalmond;
 }
 
+p {
+  text-indent: 10%;
+}
 #your-name {
   background-color: azure;
   border: 5px solid rgb(29, 84, 155);
+}
+
+a.button {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  text-decoration: #0c2c4f;
+  color: initial;
+  background-color: #ffc170;
+  border-color: black;
+  border-style: ridge;
+  padding-left: 3px;
+  padding-right: 3px;
 }
