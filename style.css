@@ -9,14 +9,14 @@ html {
 }
 
 body {
-  /* background-image: linear-gradient(
+  background-image: linear-gradient(
     to top right,
     aqua,
     rgb(98, 98, 255),
     blue,
     black 99%
-  ); */
-  background-color: white;
+  );
+  /* background-color: white; */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -65,6 +65,22 @@ body {
 .topnav a.active {
   background-color: #04aa6d;
   color: white;
+}
+
+div.center {
+  text-align: center;
+}
+
+div.video-mask {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 1000px;
+  position: relative;
+  left: 22%;
+}
+
+video {
+  position: inherit;
 }
 
 /* Main content header for the 'big themes' */
