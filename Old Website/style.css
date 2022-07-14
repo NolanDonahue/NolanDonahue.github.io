@@ -5,7 +5,11 @@
 }
 
 body {
-  background-color: rgb(255, 215, 163);
+  background: linear-gradient(
+    to top left,
+    rgb(255, 200, 127),
+    rgba(221, 200, 174, 0.795)
+  );
   font-family: Arial, Helvetica, sans-serif;
   /* font-size: ; */
   /* padding: 25px; */
