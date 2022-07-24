@@ -1,0 +1,283 @@
+/* Table of Contents
+1. Global
+2. Navbar
+3. Content
+4. Footer
+5. Special
+6. Responsive Elements
+ */
+
+/* 1. Global */
+
+:root {
+  --background-primary: white;
+  --background-secondary: antiquewhite;
+  --text-primary: black;
+  --text-secondary: grey;
+  --accent-primary: blue;
+  --accent-secondary: #00a8e0;
+}
+
+body {
+  font-family: "work sans";
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(
+    0.5turn,
+    var(--background-secondary),
+    var(--background-secondary),
+    var(--background-secondary),
+    var(--accent-secondary)
+  );
+}
+
+/* 2. Navbar */
+
+.nav-logo {
+  text-decoration: underline;
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-primary);
+  text-align: center;
+  opacity: 0;
+}
+
+.nav-link:hover {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+
+/* 3. Content */
+h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+}
+
+h6 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  padding-top: 5px;
+}
+
+/* 4. Footer */
+.footer {
+  text-align: center;
+}
+
+.footer-link {
+  background-color: transparent;
+  padding: 7px;
+}
+
+/* 5. Special */
+.fade-in {
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fade-in-long {
+  animation: fadeInAnimationLong ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+@keyframes fadeInAnimationLong {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.text-wiggle {
+  animation: wiggle 2s;
+  animation-delay: 3s;
+}
+@keyframes wiggle {
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-10deg);
+  }
+  20% {
+    transform: rotateZ(7deg);
+  }
+  25% {
+    transform: rotateZ(-7deg);
+  }
+  30% {
+    transform: rotateZ(4deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+/* 6. Responsive */
+
+/* Large desktop screens 1920x1080*/
+@media only screen and (min-width: 1400px) {
+  .nav-logo {
+    font-size: 10vh;
+    text-decoration-thickness: 0.5vh;
+  }
+
+  .nav-link {
+    font-size: 7vh;
+    border-width: 0.4vh !important;
+  }
+  .footer {
+    margin-top: 200px;
+  }
+
+  h1 {
+    margin-top: 100px;
+  }
+}
+/* Normal desktop screens 1280x720*/
+@media only screen and (min-width: 1000px) and (max-width: 1399px) {
+  .nav-logo {
+    font-size: 10vh;
+    text-decoration-thickness: 0.5vh;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-size: 7vh;
+    border-width: 0.4vh !important;
+  }
+  .footer {
+    position: absolute;
+    bottom: 5vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  .width {
+    width: 100% !important;
+  }
+
+  h1 {
+    margin-top: 10vh;
+  }
+}
+/* Tablet screens  768x1024*/
+@media only screen and (min-width: 500px) and (max-width: 999px) {
+  .nav-logo {
+    font-size: 5vh;
+    text-decoration-thickness: 0.5vh;
+    padding: 0;
+    position: relative;
+    top: 5vh;
+  }
+
+  .nav-link {
+    font-size: 4vh;
+    border-width: 0.2vh !important;
+  }
+  .container {
+    width: 100% !important;
+    position: relative;
+    top: 25vh;
+  }
+
+  .left {
+    right: 10vh;
+  }
+  .right {
+    left: 10vh;
+  }
+
+  .break {
+    margin-top: 10px;
+  }
+  /* Content */
+  /* Footer */
+  .footer {
+    position: absolute;
+    bottom: 5vh;
+    display: none; /*FIXME BUG */
+  }
+
+  .footer-link {
+    background-color: transparent;
+    padding: 7px;
+  }
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  .footer-link {
+    display: none;
+  }
+
+  .text-wiggle {
+    animation: none;
+  }
+
+  .width {
+    width: 100vw !important;
+  }
+}
+/* Phone screens 360x640 */
+@media only screen and (max-width: 500px) {
+  /* Navbar */
+  .nav-logo {
+    font-size: 5vh;
+    text-decoration-thickness: 0.5vh;
+    padding: 0;
+  }
+
+  .nav-link {
+    font-size: 4vh;
+    border-width: 0.4vh !important;
+  }
+  .container {
+    width: 50% !important;
+    margin-top: 10px;
+  }
+
+  .break {
+    margin-top: 10px;
+  }
+  /* Content */
+  /* Footer */
+  .footer {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .footer-link {
+    background-color: transparent;
+    padding: 7px;
+  }
+
+  h1 {
+    margin-top: 50px;
+  }
+}
