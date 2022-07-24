@@ -1,0 +1,160 @@
+/* Table of Contents
+1. Global
+2. Navbar
+3. Content
+4. Footer
+5. Special
+ */
+
+/* 1. Global */
+
+:root {
+  --background-primary: white;
+  --background-secondary: antiquewhite;
+  --text-primary: black;
+  --text-secondary: grey;
+  --accent-primary: blue;
+  --accent-secondary: teal;
+}
+
+body {
+  font-family: "work sans";
+  overflow: hidden;
+  background-color: var(--background-secondary);
+}
+
+/* 2. Navbar */
+.navbar {
+  margin-top: 40px;
+  padding: 0;
+}
+
+.nav-logo {
+  font-size: 100px;
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-align: center;
+  color: var(--text-primary);
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 70px;
+  border-width: 4px !important;
+  text-align: center;
+  opacity: 0;
+}
+
+.nav-link:hover {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+}
+
+/* 3. Content */
+h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 100px;
+}
+
+h6 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  padding-top: 5px;
+}
+
+/* 4. Footer */
+.footer {
+  margin-top: 200px;
+  text-align: center;
+}
+
+.footer-link {
+  background-color: var(--background-secondary);
+  padding: 7px;
+  border-width: 4px !important;
+}
+
+/* 5. Special */
+.fade-in {
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.fade-in-long {
+  animation: fadeInAnimationLong ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+@keyframes fadeInAnimationLong {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.text-wiggle {
+  animation: wiggle 2s;
+  animation-delay: 3s;
+}
+@keyframes wiggle {
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-10deg);
+  }
+  20% {
+    transform: rotateZ(7deg);
+  }
+  25% {
+    transform: rotateZ(-7deg);
+  }
+  30% {
+    transform: rotateZ(4deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+/* 
+button {
+  position: absolute;
+  left: calc(50% - 3em);
+  top: calc(50% - 2em);
+  
+  height: 4em;
+  width: 7em;
+  
+  background: #444;
+  background: linear-gradient(top, #555, #333);
+  border: none;
+  border-top: 3px solid orange;
+  border-radius: 0 0 0.2em 0.2em;
+  color: #fff;
+  font-family: Helvetica, Arial, Sans-serif;
+  font-size: 1em;
+  transform-origin: 50% 5em;
+} */
