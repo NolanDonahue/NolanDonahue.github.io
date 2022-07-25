@@ -14,121 +14,96 @@
   --white-prime: #eaeaea;
 }
 
+body {
+  color: var(--white-prime);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg {
+  background-image: url(./References/owenBg.jpg);
+  background-position: center;
+  background-attachment: fixed;
+}
+
 /* 2. Navbar */
-.logo {
-  background-color: var(--accent-primary);
-  display: flex;
-  align-items: center;
-  justify-content: center; 
-  border-radius: 15px;
+
+.row {
+  margin-top: 25vh;
 }
 
-ul {
+.nav {
   width: 100%;
-  padding: 0;
-  display: flex;
+  position: absolute;
+  top: 50vh;
 }
 
-ul li {
-  display: inline;
-  box-sizing: border-box;
-  text-align: center;
-  min-width: 80px;
-  max-width: 133px;
-  padding: 5px 8px;
-}
-
-.navbar-brand,
 .nav-link {
-  padding: 5px 13px;
-}
-
-ul li a,
-.navbar-brand {
-  color: white;
-  font-weight: bold;
-}
-
-nav ul li:last-child {
-  margin-left: auto;
-  text-align: right;
-}
-
-.navbar-brand:hover,
-.nav-link:hover {
+  font-size: 3vh;
+  font-weight: 900;
+  margin: 1.5rem;
+  text-align: center;
   background-color: var(--accent-primary);
-  border-radius: 15px;
+}
+
+link:hover {
+  text-decoration: none;
   color: var(--black-prime);
 }
 
-.nav-active {
-  background-color: var(--accent-secondary);
-  border-radius: 15px;
+a {
+  text-decoration: none;
+  color: var(--white-prime);
+}
+
+.break {
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
 
 /* 3. Content */
 
-#content {
-  padding-top: 300px;
-}
-
-h1 {
-  /* opacity: 1; */
+.header {
+  font-size: 100px;
+  font-weight: 900;
+  text-decoration: underline;
+  justify-content: center;
+  margin-top: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
   text-align: center;
-}
-
-h2,
-h3 {
-  text-align: center;
-}
-
-.bg-img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.bg-img::before {
-  content: "";
-  background-size: cover;
-  background-image: url("References/weights.jpg");
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  right: 0px;
-  left: 0px;
-}
-
-#border {
-  margin: 0 50px 0 50px;
-  padding: 15px 25px 15px 25px;
-  background-color: var(--accent-primary);
-  /* border-radius: 5px; */
-}
-
-#header {
-  color: var(--white-prime);
-  font-size: 70px;
-}
-
-#header-text {
-  color: var(--white-prime);
-  font-size: 40px;
 }
 
 /* 4. Footer */
-.footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-}
-
-#footer {
-  background-color: grey;
-  padding: 8px;
-  border-radius: 15px;
-}
 
 /* 5. Testing */
+@media only screen and (min-width: 750px) {
+  .nav-link {
+    max-width: 20% !important;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .header {
+    font-size: 15vw;
+    margin-top: 1vh;
+  }
+  .nav-link {
+    font-size: 8vw;
+  }
+}
+
+/* 6. Animation */
+@keyframes pulse {
+  0% {
+    background-color: linear-gradient(transparent);
+  }
+  50% {
+    background-color: linear-gradient();
+  }
+
+  100% {
+    background-color: linear-gradient(--white-prime);
+  }
+}
