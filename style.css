@@ -220,20 +220,22 @@ h6 {
   .footer {
     position: absolute;
     bottom: 5vh;
-    display: none; /*FIXME BUG */
+  }
+
+  .footer h6 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .footer-link {
     background-color: transparent;
     padding: 7px;
+    display: none;
   }
 
   h1 {
     margin-top: 50px;
-  }
-
-  .footer-link {
-    display: none;
   }
 
   .text-wiggle {
