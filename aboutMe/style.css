@@ -14,7 +14,7 @@
   --text-primary: black;
   --text-secondary: grey;
   --accent-primary: #c5d8d6;
-  --accent-secondary: teal;
+  --accent-secondary: #008ae0;
 }
 
 body {
@@ -107,16 +107,18 @@ p {
 
 /* 5. Special */
 .fade-in {
-  animation: fadeInAnimation ease 2s;
+  animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-delay: 2s;
+  animation-delay: 1s;
 }
 @keyframes fadeInAnimation {
   0% {
+    color: var(--accent-secondary);
     opacity: 0;
   }
   100% {
+    color: black;
     opacity: 1;
   }
 }
@@ -164,22 +166,3 @@ p {
     transform: rotateZ(0);
   }
 }
-/* 
-  button {
-    position: absolute;
-    left: calc(50% - 3em);
-    top: calc(50% - 2em);
-    
-    height: 4em;
-    width: 7em;
-    
-    background: #444;
-    background: linear-gradient(top, #555, #333);
-    border: none;
-    border-top: 3px solid orange;
-    border-radius: 0 0 0.2em 0.2em;
-    color: #fff;
-    font-family: Helvetica, Arial, Sans-serif;
-    font-size: 1em;
-    transform-origin: 50% 5em;
-  } */
