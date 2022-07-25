@@ -67,15 +67,33 @@ h1 {
   /* border: 2px solid rgb(255, 255, 255); */
 }
 #pictures {
-  margin: var(--spacing-primary);
+  /* margin-top: var(--spacing-primary); */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
   padding: 0;
-  height: 40%;
+  width: auto;
+  max-width: 90%;
+  height: 40vh;
+}
+
+.content {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #text {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   text-align: left;
   margin: var(--spacing-primary);
   padding: 0;
+  max-width: 70ch;
+}
+
+.col-md-4 {
+  min-width: 25vw !important;
 }
 
 ::-webkit-scrollbar {

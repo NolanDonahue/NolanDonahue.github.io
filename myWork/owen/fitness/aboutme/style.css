@@ -40,6 +40,8 @@ ul li a,
 
 #heading {
   margin-top: 200px;
+  position: relative;
+  z-index: 1;
 }
 h1 {
   font-size: 100px;
@@ -65,6 +67,12 @@ p {
   bottom: 0px;
   right: 0px;
   left: 0px;
+}
+
+.text {
+  min-width: 45ch;
+  max-width: 80vw;
+  font-size: 2vh;
 }
 
 /* 4. Footer */
