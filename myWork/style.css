@@ -25,13 +25,13 @@ body {
 
 /* 2. Navbar */
 .navbar {
-  margin-top: 40px;
+  margin-top: 3vh;
   padding: 0;
 }
 
 .nav-logo {
-  font-size: 50px;
-  text-decoration-thickness: 4px;
+  font-size: 5vh;
+  text-decoration-thickness: 0.4vh;
   text-align: center;
   color: var(--text-primary);
   padding: 0;
@@ -40,8 +40,8 @@ body {
 .nav-link {
   text-decoration: none;
   color: var(--text-primary);
-  font-size: 50px;
-  border-width: 4px !important;
+  font-size: 5vh;
+  border-width: 0.4vh !important;
   text-align: center;
   opacity: 1;
 }
@@ -60,13 +60,19 @@ body {
 h1 {
   display: flex;
   font-weight: 600;
-  margin-top: 100px;
+  margin-top: 10vh;
   text-decoration: underline;
-  margin-left: 25px;
+  margin-left: 2.5vh;
+  font-size: 4vh;
+}
+
+h2 {
+  font-size: 3vh;
 }
 
 img {
-  height: 400px;
+  height: 40vh;
+  max-width: 90%;
   width: auto;
 }
 
@@ -77,21 +83,21 @@ img {
 /* 4. Footer */
 
 .foot {
-  font-size: 40px;
+  font-size: 4vh;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 3vh;
 }
 
 .footer {
-  margin-top: 200px;
+  margin-top: 20vh;
   text-align: center;
-  font-size: 40px;
+  font-size: 4vh;
 }
 
 .footer-link {
   background-color: var(--background-secondary);
-  padding: 7px;
-  border-width: 4px !important;
+  padding: 0.7vh;
+  border-width: 0.4vh !important;
 }
 
 /* 5. Special */
@@ -151,5 +157,12 @@ img {
   40%,
   100% {
     transform: rotateZ(0);
+  }
+}
+
+/* 6. Responsive */
+@media only screen and (max-width: 800px) {
+  .nav-logo {
+    display: none;
   }
 }
