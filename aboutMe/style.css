@@ -19,19 +19,19 @@
 
 body {
   font-family: "work sans";
-  overflow: hidden;
+  overflow: auto;
   background-color: var(--background-secondary);
 }
 
 /* 2. Navbar */
 .navbar {
-  margin-top: 40px;
+  margin-top: 3vh;
   padding: 0;
 }
 
 .nav-logo {
-  font-size: 50px;
-  text-decoration-thickness: 4px;
+  font-size: 5vh;
+  text-decoration-thickness: 0.1vh;
   text-align: center;
   color: var(--text-primary);
   padding: 0;
@@ -40,8 +40,8 @@ body {
 .nav-link {
   text-decoration: none;
   color: var(--text-primary);
-  font-size: 50px;
-  border-width: 4px !important;
+  font-size: 4vh;
+  border-width: 0.6vh !important;
   text-align: center;
   opacity: 1;
 }
@@ -62,14 +62,15 @@ h1 {
   justify-content: center;
   text-align: center;
   font-weight: 600;
-  margin-top: 100px;
+  margin-top: 10vh;
+  color: var(--accent-secondary);
 }
 
 h6 {
   text-align: center;
   font-weight: 400;
-  font-size: 20px;
-  padding-top: 5px;
+  font-size: 2vh;
+  padding-top: 0.5vh;
 }
 
 .underline {
@@ -77,32 +78,39 @@ h6 {
 }
 
 p {
-  font-size: 15px;
+  font-size: 1.5vh;
   max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .portrait {
   height: 90%;
+
   width: auto;
-  border: 4px solid black;
-  margin-top: 30px;
+  border: 0.4vh solid black;
+  margin-top: 3vh;
+}
+
+.photo-container {
+  max-width: 50% !important;
 }
 
 /* 4. Footer */
 
 .foot {
-  font-size: 40px;
+  font-size: 4vh;
 }
 
 .footer {
-  margin-top: 200px;
+  margin-top: 20vh;
   text-align: center;
 }
 
 .footer-link {
   background-color: var(--background-secondary);
-  padding: 7px;
-  border-width: 4px !important;
+  padding: 0.7vh;
+  border-width: 0.4vh !important;
 }
 
 /* 5. Special */
@@ -164,5 +172,23 @@ p {
   40%,
   100% {
     transform: rotateZ(0);
+  }
+}
+
+/* 6. Responsive */
+@media only screen and (max-width: 800px) {
+  .portrait {
+    display: none;
+    max-width: 40vw;
+    max-height: 50vh;
+  }
+  .nav-logo {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .portrait {
+    display: none;
   }
 }
