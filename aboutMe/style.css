@@ -40,8 +40,8 @@ body {
 .nav-link {
   text-decoration: none;
   color: var(--text-primary);
-  font-size: 4vh;
-  border-width: 0.6vh !important;
+  font-size: 2.5vh;
+  border-width: 0.2vh !important;
   text-align: center;
   opacity: 1;
 }

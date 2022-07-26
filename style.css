@@ -45,6 +45,7 @@ body {
   color: var(--text-primary);
   text-align: center;
   opacity: 0;
+  margin-top: 25vh;
 }
 
 .nav-link:hover {
@@ -117,19 +118,19 @@ h6 {
     transform: rotateZ(0);
   }
   15% {
-    transform: rotateZ(-10deg);
+    transform: rotateZ(-5deg);
   }
   20% {
-    transform: rotateZ(7deg);
+    transform: rotateZ(3deg);
   }
   25% {
-    transform: rotateZ(-7deg);
+    transform: rotateZ(-3deg);
   }
   30% {
-    transform: rotateZ(4deg);
+    transform: rotateZ(1deg);
   }
   35% {
-    transform: rotateZ(-4deg);
+    transform: rotateZ(-1deg);
   }
   40%,
   100% {
@@ -147,8 +148,8 @@ h6 {
   }
 
   .nav-link {
-    font-size: 7vh;
-    border-width: 0.4vh !important;
+    font-size: 3vh;
+    border-width: 0.2vh !important;
   }
   .footer {
     margin-top: 200px;
@@ -167,8 +168,8 @@ h6 {
   }
 
   .nav-link {
-    font-size: 7vh;
-    border-width: 0.4vh !important;
+    font-size: 3vh;
+    border-width: 0.2vh !important;
   }
   .footer {
     position: absolute;
@@ -196,7 +197,7 @@ h6 {
   }
 
   .nav-link {
-    font-size: 4vh;
+    font-size: 2vh;
     border-width: 0.2vh !important;
   }
   .container {
@@ -206,10 +207,10 @@ h6 {
   }
 
   .left {
-    right: 10vh;
+    right: 30vh;
   }
   .right {
-    left: 10vh;
+    left: 30vh;
   }
 
   .break {
