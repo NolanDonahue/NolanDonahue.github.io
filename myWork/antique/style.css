@@ -1,0 +1,174 @@
+/* 
+1. Global
+2. Navbar
+3. Content
+4. Images
+5. Footer
+6. Responsive
+7. Animations
+8. Testing
+ */
+
+/* 1. Global */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background-primary: white;
+  --background-secondary: black;
+  --text-primary: green;
+  --text-secondary: black;
+  --accent-primary: red;
+  --accent-secondary: purple;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+}
+
+.split-left {
+  height: 100%;
+  width: 60vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 1vh;
+}
+
+.left {
+  left: 0;
+  background-color: var(--background-primary);
+}
+
+.split-right {
+  height: 100%;
+  width: 40vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 1vh;
+}
+
+.right {
+  right: 0;
+  background-color: var(--background-primary);
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered-img {
+  width: 15vw;
+}
+
+/* 2. Navbar */
+
+ul {
+  list-style-type: none;
+  justify-content: left;
+}
+
+.navbar {
+  justify-content: left;
+  padding: 0;
+}
+
+li a {
+  font-style: none;
+  list-style: none;
+  background-color: var(--accent-primary);
+  color: var(--text-primary);
+  border-radius: 5px;
+  font-size: 2vh;
+  margin-left: 5vw;
+}
+
+.nav-logo {
+  border-radius: 0;
+  font-size: 1.5em;
+  margin-left: 0;
+  margin-right: 3vw;
+}
+
+/* 3. Content */
+
+.header {
+  font-size: 10vh;
+  white-space: wrap;
+  overflow: hidden;
+  top: 30%;
+  animation-name: wiggle;
+  animation-duration: 2s;
+  transform-origin: center;
+}
+.text {
+  top: 60%;
+}
+
+/* 4. Images */
+
+.image {
+  width: 40vw;
+  height: auto;
+  max-height: 100vh;
+  animation: image-in 5s ease;
+}
+
+/* 5. Footer */
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 2vw;
+}
+
+#social-icons {
+  font-size: 2vh;
+  color: var(--text-primary);
+  display: inline-block;
+}
+#social-text {
+  display: inline-block;
+  margin-right: 3vw;
+  font-size: 2vh;
+  font-weight: 200;
+}
+
+/* 6. Responsive */
+
+/* 7. Animations */
+@keyframes image-in {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes wiggle {
+  0% {
+  }
+  40% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 8. Testing */
