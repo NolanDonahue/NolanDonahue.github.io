@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Teko&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 /* 
 1. Global
 2. Navbar
@@ -16,16 +18,18 @@
 }
 
 :root {
-  --background-primary: white;
-  --background-secondary: black;
-  --text-primary: green;
-  --text-secondary: black;
-  --accent-primary: red;
-  --accent-secondary: purple;
+  /* --background-primary: #fefae0; */
+  --background-primary: rgb(247, 243, 243);
+  --background-secondary: #d4a373;
+  --text-primary: black;
+  --text-secondary: #bdd470;
+  --accent-primary: #e9edc9;
+  --accent-secondary: #faedcd;
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: inter;
+  font-weight: 700;
   height: 100vh;
 }
 
@@ -36,7 +40,6 @@ body {
   z-index: 1;
   top: 0;
   overflow-x: hidden;
-  padding-top: 1vh;
 }
 
 .left {
@@ -78,6 +81,10 @@ ul {
   justify-content: left;
 }
 
+nav {
+  background-color: var(--background-secondary);
+}
+
 .navbar {
   justify-content: left;
   padding: 0;
@@ -86,11 +93,17 @@ ul {
 li a {
   font-style: none;
   list-style: none;
-  background-color: var(--accent-primary);
+  /* background-color: var(--accent-primary); */
   color: var(--text-primary);
   border-radius: 5px;
   font-size: 2vh;
   margin-left: 5vw;
+  padding: 0;
+}
+
+li a:hover {
+  background-color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .nav-logo {
@@ -98,6 +111,16 @@ li a {
   font-size: 1.5em;
   margin-left: 0;
   margin-right: 3vw;
+  padding: 0vh;
+  background: -webkit-linear-gradient(
+    0.5turn,
+    var(--background-primary),
+    var(--accent-secondary),
+    #bdd470,
+    #bdd470
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* 3. Content */
@@ -106,16 +129,31 @@ li a {
   font-size: 10vh;
   white-space: wrap;
   overflow: hidden;
+  margin-top: 10vh;
+  text-align: center;
 }
 
 .wiggle {
   animation-name: wiggle;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
+  animation-duration: 0.5s;
+  animation-delay: 3s;
 }
 
 .text {
   top: 60%;
+}
+
+.sub-text {
+  top: 70%;
+  text-align: right;
+  margin-right: 10vw;
+  margin-top: 30vh;
+}
+.sub-text a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  font-size: 1.2rem;
+  font-weight: 900;
 }
 
 /* 4. Images */
@@ -124,7 +162,7 @@ li a {
   width: 40vw;
   height: auto;
   max-height: 100vh;
-  animation: image-in 5s ease;
+  animation: image-in 3s ease;
 }
 
 /* 5. Footer */
@@ -150,6 +188,24 @@ footer {
 
 /* 6. Responsive */
 
+@media only screen and (max-width: 1300px) {
+  .image {
+    display: none;
+  }
+  .split-left {
+    width: 100%;
+  }
+  .split-right {
+    width: 0;
+  }
+  .navbar {
+    justify-content: space-around;
+  }
+  .header {
+    font-size: 3rem;
+  }
+}
+
 /* 7. Animations */
 @keyframes image-in {
   0% {
@@ -168,7 +224,7 @@ footer {
     transform: scale(1);
   }
   40% {
-    transform: scale(1.5);
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
