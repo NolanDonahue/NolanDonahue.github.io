@@ -106,11 +106,14 @@ li a {
   font-size: 10vh;
   white-space: wrap;
   overflow: hidden;
-  top: 30%;
+}
+
+.wiggle {
   animation-name: wiggle;
   animation-duration: 2s;
-  transform-origin: center;
+  animation-iteration-count: infinite;
 }
+
 .text {
   top: 60%;
 }
@@ -162,6 +165,7 @@ footer {
 
 @keyframes wiggle {
   0% {
+    transform: scale(1);
   }
   40% {
     transform: scale(1.5);
