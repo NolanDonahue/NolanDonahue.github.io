@@ -19,12 +19,12 @@
 
 :root {
   /* --background-primary: #fefae0; */
-  --background-primary: rgb(247, 243, 243);
-  --background-secondary: #d4a373;
+  --background-primary: hsl(0, 20%, 96%);
+  --background-secondary: hsl(30, 53%, 64%);
   --text-primary: black;
-  --text-secondary: #bdd470;
-  --accent-primary: #e9edc9;
-  --accent-secondary: #faedcd;
+  --text-secondary: hsl(74, 54%, 64%);
+  --accent-primary: hsl(67, 50%, 86%);
+  --accent-secondary: hsl(43, 82%, 89%);
 }
 
 body {
@@ -104,6 +104,8 @@ li a {
 li a:hover {
   background-color: var(--text-secondary);
   color: var(--text-primary);
+  animation-name: light-up;
+  animation-duration: 0.3s;
 }
 
 .nav-logo {
@@ -120,16 +122,20 @@ li a:hover {
     #bdd470
   );
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* 3. Content */
 
+.contain-header {
+  margin-top: 10vh;
+}
+
 .header {
   font-size: 10vh;
   white-space: wrap;
   overflow: hidden;
-  margin-top: 10vh;
   text-align: center;
 }
 
@@ -140,20 +146,41 @@ li a:hover {
 }
 
 .text {
+  float: right;
+  word-break: break-word;
+  max-width: 60ch;
+  text-align: left;
+  padding: 4vw;
   top: 60%;
+}
+
+.content-image {
+  float: left;
+  max-height: 40vh;
+  max-width: 20vw;
+  top: 60%;
+  margin-left: 5vw;
 }
 
 .sub-text {
   top: 70%;
   text-align: right;
   margin-right: 10vw;
-  margin-top: 30vh;
 }
 .sub-text a {
   color: var(--text-secondary);
   text-decoration: underline;
   font-size: 1.2rem;
   font-weight: 900;
+  padding: 1vh;
+}
+
+.sub-text a:hover {
+  animation-name: light-up-sub;
+  animation-duration: 0.3s;
+  background-color: hsl(30, 53%, 64%);
+  color: var(--text-secondary);
+  border-radius: 1vh;
 }
 
 /* 4. Images */
@@ -163,6 +190,84 @@ li a:hover {
   height: auto;
   max-height: 100vh;
   animation: image-in 3s ease;
+}
+
+.slider {
+  width: 300px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  scroll-snap-points-x: repeat(300px);
+  scroll-snap-type: mandatory;
+}
+.slides::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.slides::-webkit-scrollbar-thumb {
+  background: var(--background-secondary);
+  border-radius: 10px;
+}
+.slides::-webkit-scrollbar-track {
+  background: transparent;
+}
+.slides > div {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 30vw;
+  height: 30vh;
+  margin-right: 50px;
+  border-radius: 10px;
+  background: #eee;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+}
+
+.author-info {
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 0.75rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+}
+.author-info a {
+  color: white;
+}
+.carousel-img {
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Don't need button navigation */
+@supports (scroll-snap-type) {
+  .slider > a {
+    display: none;
+  }
 }
 
 /* 5. Footer */
@@ -176,7 +281,6 @@ footer {
 
 #social-icons {
   font-size: 2vh;
-  color: var(--text-primary);
   display: inline-block;
 }
 #social-text {
@@ -204,6 +308,14 @@ footer {
   .header {
     font-size: 3rem;
   }
+  .slider {
+    display: none;
+  }
+  .text {
+    text-align: left;
+    transform: translate(20vw);
+    width: 60vw;
+  }
 }
 
 /* 7. Animations */
@@ -228,6 +340,52 @@ footer {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes light-up {
+  0% {
+    background-color: hsla(30, 53%, 64%, 0);
+    color: var(--text-primary);
+  }
+  25% {
+    background-color: hsla(74, 54%, 64%, 0.25);
+    color: var(--text-primary);
+  }
+  50% {
+    background-color: hsla(74, 54%, 64%, 0.5);
+    color: var(--text-primary);
+  }
+  75% {
+    background-color: hsla(74, 54%, 64%, 0.75);
+    color: var(--text-primary);
+  }
+  100% {
+    background-color: hsl(74, 54%, 64%);
+    color: var(--text-primary);
+  }
+}
+
+@keyframes light-up-sub {
+  0% {
+    background-color: hsla(30, 53%, 64%, 0);
+    color: var(--text-secondary);
+  }
+  25% {
+    background-color: hsla(30, 53%, 64%, 0.25);
+    color: var(--text-secondary);
+  }
+  50% {
+    background-color: hsla(30, 53%, 64%, 0.5);
+    color: var(--text-secondary);
+  }
+  75% {
+    background-color: hsla(30, 53%, 64%, 0.75);
+    color: var(--text-secondary);
+  }
+  100% {
+    background-color: hsl(30, 53%, 64%);
+    color: var(--text-secondary);
   }
 }
 
