@@ -78,7 +78,7 @@ div.slider.round::before {
 }
 
 input:checked + .slider {
-  background-color: #66bb6a;
+  background-color: var(--accent-secondary);
 }
 
 input:checked + .slider:before {

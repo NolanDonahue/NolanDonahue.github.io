@@ -47,10 +47,12 @@ body {
   opacity: 0;
   margin-top: 25vh;
   border-color: var(--text-primary);
+  transition: background-color 0.6s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
 .nav-link:hover {
-  background-color: var(--background-primary);
+  background-color: var(--accent-secondary);
   color: var(--text-secondary);
 }
 
@@ -178,10 +180,6 @@ h6 {
     bottom: 5vh;
     left: 50%;
     transform: translate(-50%, 0);
-  }
-
-  .width {
-    width: 100% !important;
   }
 
   h1 {
