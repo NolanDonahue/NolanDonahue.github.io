@@ -46,11 +46,12 @@ body {
   text-align: center;
   opacity: 0;
   margin-top: 25vh;
+  border-color: var(--text-primary);
 }
 
 .nav-link:hover {
   background-color: var(--background-primary);
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 /* 3. Content */
@@ -59,6 +60,7 @@ h1 {
   justify-content: center;
   text-align: center;
   font-weight: 600;
+  color: var(--text-primary);
 }
 
 h6 {

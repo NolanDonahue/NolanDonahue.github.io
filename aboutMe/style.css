@@ -48,7 +48,7 @@ body {
 
 .nav-link:hover {
   background-color: var(--background-primary);
-  color: var(--text-primary);
+  color: var(--text-secondary);
 }
 
 /* 3. Content */

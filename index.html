@@ -21,10 +21,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="darkmode.css" />
   </head>
   <body>
     <!-- Optional JavaScript -->
-    <script srvc="script.js"></script>
+    <script src="script.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -41,14 +42,22 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
     <!-- Google Fonts -->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
     </style>
     <!-- Start of Content -->
+
+    <!-- Dark Mode -->
+    <div class="theme-switch-wrapper">
+      <label for="checkbox" class="theme-switch">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+      </label>
+    </div>
+
     <!-- Start of Header -->
-    <h1 class="fade-in-long header" style="opacity: 0"
+    <h1 class="fade-in-long" style="opacity: 0"
       >Nolan
       <br />
       -J-
@@ -99,5 +108,7 @@
         <h6 class="">nolandonahuedev@gmail.com</h6>
       </div>
     </div>
+    <!-- Darkmode JS-->
+    <script src="darkmode.js"></script>
   </body>
 </html>
