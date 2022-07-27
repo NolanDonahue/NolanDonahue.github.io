@@ -19,12 +19,18 @@
 
 :root {
   /* --background-primary: #fefae0; */
-  --background-primary: hsl(0, 20%, 96%);
+  /* --background-primary: hsl(0, 20%, 96%);
   --background-secondary: hsl(30, 53%, 64%);
   --text-primary: black;
   --text-secondary: hsl(74, 54%, 64%);
   --accent-primary: hsl(67, 50%, 86%);
-  --accent-secondary: hsl(43, 82%, 89%);
+  --accent-secondary: hsl(43, 82%, 89%); */
+  --background-primary: #fbeec1;
+  --background-secondary: #659dbd;
+  --text-primary: black;
+  --text-secondary: #daad86;
+  --accent-primary: #8d8741;
+  --accent-secondary: #bc986a;
 }
 
 body {
@@ -178,8 +184,8 @@ li a:hover {
 .sub-text a:hover {
   animation-name: light-up-sub;
   animation-duration: 0.3s;
-  background-color: hsl(30, 53%, 64%);
-  color: var(--text-secondary);
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
   border-radius: 1vh;
 }
 
@@ -369,23 +375,23 @@ footer {
 @keyframes light-up-sub {
   0% {
     background-color: hsla(30, 53%, 64%, 0);
-    color: var(--text-secondary);
+    color: var(--text-primary);
   }
   25% {
     background-color: hsla(30, 53%, 64%, 0.25);
-    color: var(--text-secondary);
+    color: var(--text-primary);
   }
   50% {
     background-color: hsla(30, 53%, 64%, 0.5);
-    color: var(--text-secondary);
+    color: var(--text-primary);
   }
   75% {
     background-color: hsla(30, 53%, 64%, 0.75);
-    color: var(--text-secondary);
+    color: var(--text-primary);
   }
   100% {
     background-color: hsl(30, 53%, 64%);
-    color: var(--text-secondary);
+    color: var(--text-primary);
   }
 }
 
