@@ -228,6 +228,29 @@ body {
   }
 }
 
+.cta {
+  position: relative;
+  isolation: isolate; /*Creates a new stacking context */
+  text-align: center;
+}
+@media (min-width: 50em) {
+  .cta {
+    text-align: left;
+  }
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(./references/images/bg-tablet-pattern.svg),
+    url(./references/images/bg-tablet-pattern.svg);
+  background-repeat: no-repeat;
+  z-index: -1;
+  opacity: 0.1;
+  background-position: -15rem -5rem, 80rem -42rem;
+}
+
 /* 4. Content */
 
 .button {
@@ -254,11 +277,22 @@ body {
 }
 .button[data-type="inverted"]:hover,
 .button[data-type="inverted"]:focus-visible {
-  background-color: var(--clr-neutral-100);
+  background-color: hsl(0, 0%, 45%);
   color: var(--clr-accent-300);
 }
 
+p:not([class]) {
+  /* prevent a p with a class from receiving these properties |only default| */
+  max-width: 33ch;
+  opacity: 0.75;
+}
+
+p[data-width="wide"] {
+  max-width: 42ch;
+}
+
 /* 5. Footer */
+
 /* 6. Animation */
 /* 7. Responsive */
 /* 8. Test */
@@ -360,12 +394,35 @@ body {
   }
 }
 
+/* Applies to every element sibling other than the first sibling */
+.flow * + * {
+  /* alternative :where(.flow :not(:first-child)) */
+  margin-top: var(--flow-spacer, 4em);
+}
+
 .container {
   --max-width: 1110px;
   --padding: 1rem;
 
   width: min(--max-width, 100% - var(--padding) * 2);
   margin-inline: auto;
+}
+
+.justify-self-end-md {
+  justify-self: end;
+}
+
+.vertical-align-center {
+  vertical-align: center;
+}
+
+.vertical-align-md {
+  align-items: center;
+}
+@media (max-width: 50em) {
+  .justify-self-end-md {
+    justify-self: center;
+  }
 }
 
 .even-columns {
