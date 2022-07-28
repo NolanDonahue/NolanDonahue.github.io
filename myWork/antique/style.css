@@ -298,7 +298,7 @@ footer {
 
 /* 6. Responsive */
 
-@media only screen and (max-width: 1300px) {
+@media only screen (and max-width: 1300px) {
   .image {
     display: none;
   }
