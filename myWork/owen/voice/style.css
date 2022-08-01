@@ -1,0 +1,275 @@
+@import "root.css";
+/* 
+1. Universal Classes
+2. Navigation / Header
+3. Content
+4. Footer
+5. Animations
+6. Reset
+ */
+
+/* 1. Universal Classes */
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-primary);
+}
+
+/* 2. Navigation / Header */
+.bg-img {
+  background-image: url("./references/studio.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100vw;
+  -webkit-mask-image: linear-gradient(white, white, transparent);
+  mask-image: linear-gradient(white, white, transparent);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+
+  padding-top: var(--size-100);
+}
+
+/* TODO Mobile nav toggle */
+/* TODO Darkmode */
+.darkmode {
+  color: var(--text-primary);
+  margin-left: var(--size-500);
+}
+
+.nav-logo {
+  display: flex;
+}
+
+.nav-list {
+  font-size: var(--font-nav-size);
+  font-weight: var(--fw-semi-bold);
+  display: flex;
+  gap: clamp(2vw, 4vw, 6vw);
+  /* gap: clamp(var(--size-400), 3vw, --size-700); */
+
+  margin-left: auto;
+  justify-content: space-between;
+}
+.nav-list a {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+/* Nav Hover Effects TODO */
+
+.primary-header {
+  padding-top: var(--size-900);
+  font-size: var(--font-primary-header-size);
+  font-weight: var(--fw-bold);
+  display: flex;
+}
+.primary-header h2 {
+  text-align: center;
+}
+.primary-text {
+  font-size: var(--font-primary-text-size);
+  font-weight: var(--fw-semi-bold);
+  color: var(--text-primary);
+
+  width: 25vw;
+  padding-top: var(--size-300);
+  line-height: 1.4;
+  padding-bottom: var(--size-900);
+}
+
+/* 3. Content */
+main .wrapper {
+  padding-top: var(--size-800);
+  padding-bottom: var(--size-800);
+}
+.strip-primary {
+  background-color: var(--accent-primary);
+}
+
+.strip-theme-header {
+  display: flex;
+  padding-bottom: var(--size-200);
+}
+.strip-theme-header p {
+  border-top: 2px solid var(--accent-tertiary);
+}
+.strip-theme-header button {
+  text-decoration: none;
+  border: 2px solid var(--accent-tertiary);
+  margin-left: auto;
+  padding: 0 var(--size-200);
+  background-color: transparent;
+  color: var(--accent-tertiary);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-400);
+}
+
+.card {
+  /* background-color: var(--background-primary); */
+}
+.card-text {
+  padding: var(--size-500);
+  background-color: var(--background-primary);
+}
+.card-text h2 {
+  font-size: var(--fs-700);
+  padding-bottom: var(--size-200);
+}
+.card-text p {
+  line-height: 1.3;
+}
+
+.strip-theme-advert {
+  display: flex;
+  padding-bottom: var(--size-200);
+}
+.card-advert {
+  width: 30em;
+  margin-right: auto;
+  background-color: var(--background-primary);
+}
+.card-video {
+  margin-left: auto;
+}
+.button-link {
+  background-color: var(--accent-secondary);
+  border: none;
+  padding: var(--size-200);
+  border-radius: 10px;
+  color: var(--text-secondary);
+}
+
+.wrapper-quote {
+  /* background-color: var(--accent-primary); */
+  padding-top: var(--size-700);
+  padding-bottom: var(--size-700);
+}
+.quote {
+  width: 40em;
+  text-align: center;
+}
+.quote h2 {
+  font-size: var(--fs-800);
+  padding: var(--size-400);
+}
+.quote p {
+  font-size: var(--font-p-size);
+  padding: var(--size-300);
+}
+.quote button {
+  padding: var(--size-200) var(--size-300);
+}
+
+/* 4 Footer */
+
+footer {
+  margin-top: var(--size-600);
+  padding-bottom: var(--size-400);
+}
+
+.card-footer {
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.row {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr;
+}
+.card h3 {
+  padding-bottom: var(--size-300);
+}
+.card a {
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+.socials {
+  padding-top: var(--size-500);
+  display: flex;
+  gap: 2vw;
+  padding-bottom: var(--size-300);
+}
+
+/* 6. Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+html,
+body {
+  height: 100%; /*alternative to min-height for if there's an issue */
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+/* input,
+button,
+textarea,
+select {
+  font: inherit;
+} */
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* End of Reset */
+
+/* 2. Universal Classes */
