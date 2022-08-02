@@ -15,6 +15,19 @@ body {
   color: var(--text-primary);
 }
 
+html,
+body {
+  position: absolute;
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* @media only screen and (max-width: 50em) {
+  html {
+    width: 100vw !important;
+  }
+} */
+
 /* 2. Navigation / Header */
 .bg-img {
   background-image: url("./references/studio.jpg");
@@ -22,31 +35,92 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: 100vw;
-  -webkit-mask-image: linear-gradient(white, white, transparent);
-  mask-image: linear-gradient(white, white, transparent);
+  /* -webkit-mask-image: linear-gradient(white, white, transparent); */
+  /* mask-image: linear-gradient(white, white, transparent); */
+
+  padding-bottom: var(--size-900);
+}
+@media (max-width: 50em) {
+  .bg-img {
+    background-size: cover;
+  }
 }
 
 nav {
   display: flex;
   align-items: center;
-
-  padding-top: var(--size-100);
 }
 
-/* TODO Mobile nav toggle */
-/* TODO Darkmode */
-.darkmode {
-  color: var(--text-primary);
-  margin-left: var(--size-500);
+/* Mobile nav toggle */
+
+.mobile-nav-toggle {
+  display: none;
 }
 
-.nav-logo {
-  display: flex;
+@media (max-width: 50em) {
+  .primary-navigation {
+    display: none;
+    /* position: fixed; */
+    position: fixed;
+    margin-top: 2em;
+
+    width: auto;
+    max-width: calc(100vw - 3rem);
+    padding: var(--size-300);
+    background: var(--accent-primary);
+    border-radius: var(--size-100);
+    box-shadow: 0 0 0 100em rgba(0, 0, 0, 0.486);
+  }
+
+  .navigation::before[data-overlay] {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
+  }
+
+  .nav-list {
+    display: block !important;
+    /* gap: var(--size-400) !important; */
+    text-align: center;
+    font-weight: var(--fw-bold);
+    font-size: 1.5rem !important;
+  }
+  .nav-list li {
+    padding: 0.5rem 7ch;
+    white-space: nowrap;
+  }
+  .nav-list li:hover {
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+
+  .primary-navigation[data-visible] {
+    display: block;
+  }
+  .mobile-nav-toggle {
+    display: block;
+    z-index: 100;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0.5em;
+  }
+
+  .mobile-nav-toggle .icon-close {
+    display: none;
+  }
+}
+
+.nav-bg {
+  background-color: var(--accent-primary);
+  padding: 0.5em;
 }
 
 .nav-list {
   font-size: var(--font-nav-size);
-  font-weight: var(--fw-semi-bold);
+  font-weight: var(--fw-bold);
   display: flex;
   gap: clamp(2vw, 4vw, 6vw);
   /* gap: clamp(var(--size-400), 3vw, --size-700); */
@@ -57,15 +131,20 @@ nav {
 .nav-list a {
   text-decoration: none;
   color: var(--text-primary);
+  padding: 6px;
 }
 
-/* Nav Hover Effects TODO */
+.nav-list a:hover {
+  background-color: var(--background-primary);
+  border-radius: 5px;
+}
 
 .primary-header {
   padding-top: var(--size-900);
   font-size: var(--font-primary-header-size);
   font-weight: var(--fw-bold);
   display: flex;
+  color: var(--text-secondary);
 }
 .primary-header h2 {
   text-align: center;
@@ -73,7 +152,7 @@ nav {
 .primary-text {
   font-size: var(--font-primary-text-size);
   font-weight: var(--fw-semi-bold);
-  color: var(--text-primary);
+  color: var(--text-secondary);
 
   width: 25vw;
   padding-top: var(--size-300);
@@ -132,15 +211,34 @@ main .wrapper {
   margin-right: auto;
   background-color: var(--background-primary);
 }
+.card-advert p {
+  margin-top: var(--size-500);
+}
 .card-video {
   margin-left: auto;
 }
+
+@media (max-width: 50em) {
+  .card-advert {
+    max-width: calc(100vw - 2rem);
+    /* position: absolute;
+    left: 20%; */
+  }
+  .card-video {
+    display: none;
+  }
+  /* .wrapper-quote {
+    margin-top: 20em;
+  } */
+}
+
 .button-link {
   background-color: var(--accent-secondary);
   border: none;
   padding: var(--size-200);
   border-radius: 10px;
   color: var(--text-secondary);
+  margin-top: var(--size-700);
 }
 
 .wrapper-quote {
