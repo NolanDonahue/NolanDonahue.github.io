@@ -1,0 +1,196 @@
+/* Table of Contents
+1. Global
+2. Navbar
+3. Content
+4. Footer
+5. Special
+ */
+
+/* 1. Global */
+
+:root {
+  --background-primary: white;
+  --background-secondary: antiquewhite;
+  --text-primary: black;
+  --text-secondary: grey;
+  --accent-primary: #c5d8d6;
+  --accent-secondary: #008ae0;
+}
+
+body {
+  font-family: "work sans";
+  overflow: auto;
+  background-color: var(--background-secondary);
+}
+
+/* 2. Navbar */
+.navbar {
+  margin-top: 3vh;
+  padding: 0;
+}
+
+.nav-logo {
+  font-size: 5vh;
+  text-decoration-thickness: 0.1vh;
+  text-align: center;
+  color: var(--text-primary);
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 2.5vh;
+  border-width: 0.2vh !important;
+  text-align: center;
+  opacity: 1;
+  transition: background-color 0.6s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: var(--accent-secondary);
+  color: var(--text-secondary);
+}
+
+/* 3. Content */
+.card {
+  background-color: var(--background-secondary);
+  border: none;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 10vh;
+  color: var(--accent-secondary);
+}
+
+h6 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 2vh;
+  padding-top: 0.5vh;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+p {
+  font-size: 1.5vh;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.portrait {
+  height: 90%;
+
+  width: auto;
+  border: 0.4vh solid black;
+  margin-top: 3vh;
+}
+
+.photo-container {
+  max-width: 50% !important;
+}
+
+/* 4. Footer */
+
+.foot {
+  font-size: 4vh;
+}
+
+.footer {
+  margin-top: 20vh;
+  text-align: center;
+}
+
+.footer-link {
+  background-color: var(--background-secondary);
+  padding: 0.7vh;
+  border-width: 0.4vh !important;
+}
+
+/* 5. Special */
+.fade-in {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+@keyframes fadeInAnimation {
+  0% {
+    color: var(--accent-secondary);
+    opacity: 0;
+  }
+  100% {
+    color: black;
+    opacity: 1;
+  }
+}
+.fade-in-long {
+  animation: fadeInAnimationLong ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+@keyframes fadeInAnimationLong {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.text-wiggle {
+  animation: wiggle 2s;
+  animation-delay: 3s;
+}
+@keyframes wiggle {
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-10deg);
+  }
+  20% {
+    transform: rotateZ(7deg);
+  }
+  25% {
+    transform: rotateZ(-7deg);
+  }
+  30% {
+    transform: rotateZ(4deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
+
+/* 6. Responsive */
+@media only screen and (max-width: 800px) {
+  .portrait {
+    display: none;
+    max-width: 40vw;
+    max-height: 50vh;
+  }
+  .nav-logo {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .portrait {
+    display: none;
+  }
+}
