@@ -1,0 +1,53 @@
+/* 
+1. Footer
+2. Animation
+ */
+
+/* 1. Footer */
+:root {
+  --footer-accent-background: #43454d;
+  --footer-accent-secondary: #2b2d32;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-primary {
+  background-color: var(--footer-accent-background);
+  padding: 2rem 0;
+}
+.social-links {
+  margin-right: auto;
+  display: flex;
+}
+.footer-links {
+  margin-left: auto;
+  display: flex;
+}
+.footer-list {
+  padding-right: 1rem;
+}
+.footer-links a {
+  padding-left: 1rem;
+}
+.footer-links a,
+.social-links a {
+  text-decoration: none;
+  color: var(--text-secondary);
+}
+
+.footer-secondary {
+  background-color: var(--footer-accent-secondary);
+  padding: 0.7rem 0;
+}
+.footer-contact {
+  display: flex;
+}
+.footer-contact a {
+  padding-right: 1rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+}
