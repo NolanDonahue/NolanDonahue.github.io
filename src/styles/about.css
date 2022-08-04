@@ -1,0 +1,51 @@
+.navigation {
+  position: absolute;
+  /* top: 0; */
+  background-color: hsla(0, 1%, 23%, 0.836);
+  width: 100%;
+}
+
+.uneven-columns {
+  margin-left: clamp(1em, 10em, 15em);
+  padding-top: 10em;
+  display: flex;
+}
+.big-column {
+  display: flex;
+  width: 40em;
+}
+.small-column {
+  display: flex;
+  width: 20em;
+}
+
+.primary-header {
+  color: var(--text-primary);
+  line-height: 1;
+  font-size: var(--size-700);
+}
+.primary-text p {
+  font-size: var(--size-400);
+  max-width: 50%;
+  margin-top: 1em;
+  font-weight: var(--semi-bold);
+}
+
+.profile-img {
+  position: static;
+}
+
+ul {
+  margin-bottom: 1em;
+  color: var(--text-primary);
+}
+ul li h2 {
+  padding-bottom: 0.1em;
+  text-decoration: underline;
+  font-weight: var(--bold);
+  font-size: var(--size-500);
+}
+ul li a {
+  text-decoration: none;
+  color: inherit;
+}
