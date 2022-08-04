@@ -24,7 +24,7 @@ nav {
     width: auto;
     max-width: calc(100vw - 3rem);
     padding: var(--size-300);
-    background: var(--accent-primary);
+    /* background: var(--accent-primary); */
     border-radius: var(--size-100);
     box-shadow: 0 0 0 100em rgba(0, 0, 0, 0.486);
   }
@@ -71,7 +71,7 @@ nav {
 }
 
 .nav-bg {
-  background-color: var(--accent-primary);
+  background-color: transparent;
   padding: 0.5em;
 }
 
@@ -90,11 +90,11 @@ nav {
 }
 .nav-list a {
   text-decoration: none;
-  color: var(--accent-tertiary);
+  color: var(--accent-primary);
   padding: 0.5rem 1rem;
 }
 
 .nav-list a:hover {
-  background-color: var(--background-primary);
+  background-color: var(--background-secondary);
   border-radius: 5px;
 }

@@ -44,9 +44,14 @@ footer {
 }
 .footer-contact {
   display: flex;
+  margin-right: auto;
 }
 .footer-contact a {
   padding-right: 1rem;
   text-decoration: none;
   color: var(--text-secondary);
+}
+.copyright {
+  display: flex;
+  margin-left: auto;
 }
