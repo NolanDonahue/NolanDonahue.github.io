@@ -293,6 +293,85 @@ p[data-width="wide"] {
 
 /* 5. Footer */
 
+.primary-footer {
+  padding-top: var(--size-500);
+}
+
+.primary-footer .even-columns > * {
+  margin-inline: auto;
+}
+
+.primary-footer-wrapper {
+  display: grid;
+  gap: var(--size-900);
+  grid-template-areas:
+    "form"
+    "nav"
+    "logo-social";
+}
+@media (min-width: 50em) {
+  .primary-footer-wrapper {
+    grid-template-areas: "logo-social nav form";
+  }
+}
+@media (max-width: 50em) {
+  .primary-footer-wrapper {
+    margin-inline: auto;
+  }
+}
+
+.primary-footer-wrapper > :nth-child(1) {
+  grid-area: logo-social;
+  display: flex;
+}
+.primary-footer-wrapper > :nth-child(2) {
+  grid-area: nav;
+}
+.primary-footer-wrapper > :nth-child(3) {
+  grid-area: form;
+}
+
+.footer-logo {
+  --logo-color: var(--clr-neutral-100);
+}
+.logo {
+  --logo-color: #242d52;
+}
+
+.footer-nav {
+  columns: 2;
+}
+.footer-nav a {
+  color: var(--clr-neutral-100);
+  text-decoration: none;
+}
+.footer-nav a:is(:hover, :focus) {
+  color: var(--clr-accent-400);
+}
+
+.social-list {
+  display: flex;
+  gap: var(--size-300);
+}
+
+.social-icon {
+  margin-top: 1em;
+  width: var(--size-600);
+  aspect-ratio: 1;
+  fill: var(--clr-neutral-100);
+}
+.social-list a:is(:hover, :focus) .social-icon {
+  fill: var(--clr-accent-400);
+}
+@media (min-width (50em)) {
+  .social-icon {
+    width: var(--size-500);
+  }
+  .social-list {
+    display: flex;
+    gap: var(--size-600);
+  }
+}
 /* 6. Animation */
 /* 7. Responsive */
 /* 8. Test */
