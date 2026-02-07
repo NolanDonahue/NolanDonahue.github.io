@@ -1,0 +1,324 @@
+/* --- CSS VARIABLES & RESET --- */
+:root {
+    /* Theme: Dark Blues, Purples, Greys */
+    --bg-main: #0f172a;       /* Dark Blue/Slate */
+    --bg-alt-1: #1e1b4b;      /* Deep Indigo */
+    --bg-alt-2: #312e81;      /* Indigo */
+    --bg-alt-3: #172554;      /* Deep Blue */
+    --bg-alt-4: #1e293b;      /* Slate Grey */
+
+    /* Logo Specific Colors */
+    --logo-bg: #0f172a;       /* Deep Navy */
+    --logo-text: #e2e8f0;     /* Bone White (Slate-200) */
+    --logo-accent: #a855f7;   /* Purple ring on hover */
+    
+    --accent-purple: #a855f7;
+    --accent-highlight: #38bdf8;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    
+    --nav-height: 80px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- NAVIGATION --- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo-container {
+    display: block;
+    width: 120px;
+    height: 120px;
+    padding-top: 1.5rem;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.logo-container:hover {
+    transform: scale(1.1);
+}
+
+/* Optional Hover Effects */
+
+.logo-container:hover .logo-letters path {
+    stroke: #ffffff;
+}
+
+/* Nav Links */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+/* Highlight active page logic handled via JS or manually adding class */
+nav a.active, nav a:hover {
+    background-color: var(--accent-purple);
+    color: #fff;
+}
+
+/* --- GLOBAL LAYOUT --- */
+main {
+    flex: 1; /* Pushes footer down */
+    padding-top: var(--nav-height); /* Prevent content hiding behind nav */
+}
+
+section {
+    padding: 4rem 5%;
+    max-width: 2200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    margin-bottom: 2rem;
+}
+
+h1 { font-size: 3rem; color: var(--accent-highlight); }
+h2 { font-size: 2.5rem; border-left: 5px solid var(--accent-purple); padding-left: 1rem; }
+
+/* --- HOME PAGE SPECIFICS --- */
+.content-block {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    /* Increased size: padding doubled, min-height added */
+    padding: 8rem 4rem; 
+    min-height: 50vh; 
+    margin-bottom: 12rem;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.block-1 { background-color: var(--bg-alt-1); }
+.block-2 { background-color: var(--bg-alt-2); }
+.block-3 { background-color: var(--bg-alt-3); }
+.block-4 { background-color: var(--bg-alt-4); }
+
+.content-block:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.text-side { flex: 1; font-size: 1.1rem; }
+.img-side { flex: 1; display: flex; justify-content: center; }
+
+.feature-img {
+    width: 100%;
+    max-width: 700px; /* Increased max width */
+    border-radius: 8px;
+    opacity: .8; /* Starts dimmer to emphasize scroll effect */
+    transform: scale(0.85);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.feature-img.active-view {
+    opacity: 1;
+    transform: scale(1.05); /* Enlarge slightly past 100% when active */
+}
+
+/* --- ABOUT PAGE SPECIFICS --- */
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.blog-post {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background: rgba(255,255,255,0.03);
+    border-radius: 8px;
+    border-left: 1px solid var(--accent-purple);
+}
+
+.blog-post h3 { margin-bottom: 1rem; color: var(--text-main); }
+.blog-post p { font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); }
+
+/* --- CONTACT PAGE SPECIFICS --- */
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Stack for mobile first, adjust for desktop */
+    gap: 4rem;
+    align-items: center;
+    background: var(--bg-alt-1);
+    padding: 5rem;
+    border-radius: 16px;
+    margin-top: 2rem;
+}
+
+.headshot-container {
+    flex-shrink: 0;
+}
+
+.headshot {
+    /* 400% Area Increase logic: 200px * 2 = 400px width */
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--accent-purple);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+}
+
+.contact-links {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+.link-btn {
+    color: var(--accent-highlight);
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid var(--accent-highlight);
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.link-btn:hover { background: rgba(56, 189, 248, 0.15); }
+
+.anti-scrape-svg {
+    height: 30px;
+    fill: var(--text-main);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #000;
+    color: var(--text-muted);
+    margin-top: auto;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+@media (min-width: 1024px) {
+    .contact-container {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Mobile Nav Bar Move to Bottom */
+    header { top: auto; bottom: 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: none; }
+    main { padding-top: 2rem; padding-bottom: calc(var(--nav-height) + 2rem); }
+    
+    .content-block, .content-block:nth-child(even) {
+        flex-direction: column;
+        padding: 3rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .headshot {
+        width: 250px; /* Shrink strictly for mobile fit */
+        height: 250px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
+
+/* --- CAROUSEL & SCROLL EFFECTS --- */
+
+/* 1. The Wrapper handles the Scroll Animation (Zoom/Opacity) */
+.carousel-wrapper {
+    position: relative; /* Needed to stack images inside */
+    width: 100%;
+    /* Enforce a consistent aspect ratio so the page doesn't jump */
+    aspect-ratio: 16 / 9; 
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+
+    /* Initial Scroll State (Hidden/Small) */
+    opacity: 0.2;
+    transform: scale(0.85);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* The Active Scroll State (Triggered by JS when in view) */
+.carousel-wrapper.active-view {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* 2. The Images handle the Crossfade Animation */
+.carousel-img {
+    position: absolute; /* Stack them on top of each other */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills box without stretching */
+    
+    /* Crossfade Logic */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+/* The class JS will add to the visible image */
+.carousel-img.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.svg-email-protection {
+  width: 230px;
+  height: 20px;
+  vertical-align: middle;
+  text-decoration: none;
+  
+}
